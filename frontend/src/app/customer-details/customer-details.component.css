@@ -1,0 +1,15 @@
+.details-input {
+    border: 0px;
+}
+
+form {
+    width: 40vw;
+}
+
+div {
+    border: 1px solid black;
+}
+
+label {
+    border-right: 1px solid black;
+}

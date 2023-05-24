@@ -1,0 +1,19 @@
+<p class=" text-center h3 mb-4"><strong class="shadow-sm border rounded p-1">Login with your
+        account</strong>
+</p>
+
+<form [formGroup]="userLogin" (ngSubmit)="onSubmit()" class="col-6 m-auto d-flex flex-column align-items-center">
+    <div class="mb-3 d-flex flex-column align-items-center">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" class="form-control form-control-sm m-2 border border-5 border-info"
+            placeholder="Email">
+    </div>
+    <div class="mb-3 d-flex flex-column align-items-center">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password"
+            class="form-control form-control-sm m-2 border border-5 border-info " placeholder="Password">
+    </div>
+    <p>{{err}}</p>
+    <button type="submit" class="btn btn-dark btn-outline-info btn-lg">Login</button>
+</form>
+<p class="text-center mt-5">All rights reserved to <strong>MRWD</strong> &copy; {{toDate | date: 'y'}}</p>

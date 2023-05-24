@@ -1,0 +1,40 @@
+.table-div {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+table {
+    width: 90%;
+}
+
+thead {
+    background-color: rgb(162, 162, 152);
+}
+
+tr {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.bg-body-td {
+    background-color: rgba(86, 193, 173, 0.691);
+}
+
+.form-input {
+    width: 20vw;
+}

@@ -1,0 +1,14 @@
+.table-div {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+table {
+    width: 90%;
+}
+
+.bg-body-td {
+    background-color: rgba(86, 193, 173, 0.691);
+}

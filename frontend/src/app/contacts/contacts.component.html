@@ -1,0 +1,33 @@
+<h1 class="text-dark">✉️ Contacts</h1>
+
+<form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+    <button type="submit" class=" btn btn-dark btn-outline-info btn-sm border-dark m-1 text-info">🔎</button>
+    <button (click)="onCancelFilter()"
+        class="btn btn-dark btn-outline-dark btn-sm border-dark m-1 text-light">🗙</button>
+    <input type="text" formControlName="name" placeholder="Search Name..."
+        class="form-control form-control-sm m-1 form-input border border-5 border-info">
+</form>
+<p class="font-weight-bold text-danger text-center mt-3">{{msg}}</p>
+
+<div class="table-div">
+    <table>
+        <thead>
+            <tr class="bg-dark bg-gradient text-light">
+                <td class="border border-dark text-center">No.</td>
+                <td class="border border-dark text-center">Name</td>
+                <td class="border border-dark text-center">Email</td>
+                <td class="border border-dark text-center">Birthday</td>
+                <td class="border border-dark text-center">Phone</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of contacts; let i= index" class="bg-body-td">
+                <td class=" border border-dark text-center ">{{i+1}}</td>
+                <td class=" border border-dark text-center">{{contact.name}}</td>
+                <td class=" border border-dark text-center">{{contact.email}}</td>
+                <td class="border border-dark text-center">{{contact.birthday|date:'dd/MM/yyyy'}}</td>
+                <td class="border border-dark text-center">{{contact.phone}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

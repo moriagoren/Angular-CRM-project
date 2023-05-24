@@ -1,0 +1,52 @@
+<h1 class="text-center">🧑 Customers</h1>
+
+<form [formGroup]="addCustomer" (ngSubmit)="onSubmit()" class="mr-3 d-flex flex-row justify-content-between">
+    <input type="text" name="firstName" formControlName="firstName" placeholder="First Name"
+        class="form-control form-control-sm m-1 border border-5 border-info">
+    <input type="text" name="lastName" formControlName="lastName" placeholder="Last Name"
+        class="form-control form-control-sm m-1 border border-5 border-info">
+    <input type="text" name="phone" formControlName="phone" placeholder="Phone"
+        class="form-control form-control-sm m-1 border border-5 border-info">
+    <input type="email" name="email" formControlName="email" placeholder="Email"
+        class="form-control form-control-sm m-1 border border-5 border-info">
+    <input type="text" name="Address" formControlName="Address" placeholder="Address"
+        class="form-control form-control-sm m-1 border border-5 border-info">
+    <button type="submit" class="btn btn-dark btn-outline-light btn-sm border-dark m-1 text-info"> <i
+            class="bi bi-person-fill-add"></i> + Add Customer</button>
+    <p>{{err}}</p>
+</form>
+
+<p class="font-weight-bold taxt-danger text-center mt-3">{{err}}</p>
+
+<div class="table-div">
+    <table>
+        <thead>
+            <tr class="bg-dark bg-gradien text-light">
+                <td class="border border-dark text-center"></td>
+                <td class="border border-dark text-center">No.</td>
+                <td class="border border-dark text-center">First Name</td>
+                <td class="border border-dark text-center">Last Name</td>
+                <td class="border border-dark text-center">Phone</td>
+                <td class="border border-dark text-center">Email</td>
+                <td class="border border-dark text-center">Address</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers; let i = index" class="bg-body-td">
+                <td class="border border-dark text-center">
+                    <button routerLink="/customers/details/{{customer._id}}" class="btn">👁️</button>
+                    <button routerLink="/customers/edit/{{customer._id}}" class="btn">✏️</button>
+                    <button (click)="onDelete(customer)" class="btn">🗑️</button>
+                </td>
+                <td class="border border-dark text-center">
+                    {{i+1}}
+                </td>
+                <td class="border border-dark text-center">{{customer.firstName}}</td>
+                <td class="border border-dark text-center">{{customer.lastName}}</td>
+                <td class="border border-dark text-center">{{customer.email}}</td>
+                <td class="border border-dark text-center">{{customer.phone}}</td>
+                <td class="border border-dark text-center">{{customer.Address}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
